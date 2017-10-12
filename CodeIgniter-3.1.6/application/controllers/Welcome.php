@@ -36,12 +36,6 @@ class Welcome extends CI_Controller {
 
 	public  function home(){
 
-<<<<<<< HEAD
-
-=======
-	    $data['Contacten'] = $this->model_users->getContacten();
-        $this->load->view('welcome_message', $data);
->>>>>>> fffe9d57e81893009d9a7e12e5bdc59b9ad140b9
 
     }
 }
