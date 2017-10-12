@@ -37,7 +37,7 @@ class Welcome extends CI_Controller
         $date = array('ID' => $this->input->post('id'),
             'email' => $this->input->post('email'),
             'name' => $this->input->post('name'));
-      
+
 
     }
 }
