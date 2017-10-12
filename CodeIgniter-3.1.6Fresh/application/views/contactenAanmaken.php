@@ -6,10 +6,9 @@
 </head>
 <body>
 
-<form action="">
+<form action="<?php echo site_url('Welcome/addContacts/uri')?>" method ="post" >
     ID:<br>
-    <input type="text" id="id">
-
+    <input type="text" id="ID">
     <br>
     Name:<br>
     <input type="text" id="name">
@@ -19,6 +18,5 @@
     <br><br>
     <input type="submit" value="Aanmaken">
 </form>
-
 </body>
 </html>
