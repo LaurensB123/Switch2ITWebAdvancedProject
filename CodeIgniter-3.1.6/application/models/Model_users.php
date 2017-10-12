@@ -17,7 +17,7 @@ class Model_users extends CI_Model
 
     function addContacten($data) {
         $this->load->database();
-        $this->db->instert('Contacten',$data);
+        $this->db->insert('Contacten',$data);
     }
     function getNames(){
         $this->load->database();
