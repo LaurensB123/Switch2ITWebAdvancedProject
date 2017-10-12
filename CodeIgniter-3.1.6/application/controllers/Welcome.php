@@ -37,7 +37,17 @@ class Welcome extends CI_Controller
         $date = array('ID' => $this->input->post('id'),
             'email' => $this->input->post('email'),
             'name' => $this->input->post('name'));
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+
+	}
+
+=======
+      
+>>>>>>> d0410db7716a41d0fc358b684b68ddcabeed4741
 
     }
+>>>>>>> 3ed859161cee7c50bbe25e9d1c09bef371aa99c4
 }
