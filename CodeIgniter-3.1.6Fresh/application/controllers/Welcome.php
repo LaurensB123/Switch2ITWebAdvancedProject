@@ -21,6 +21,7 @@ class Welcome extends CI_Controller
      */
     public function index()
     {
+        $this->load->helper('url');
         $this->load->model('Model_users');
         $res = $this->Model_users->getNames();
         if ($res) {
@@ -37,4 +38,17 @@ class Welcome extends CI_Controller
         $date = array('ID' => $this->input->post('id'),
             'email' => $this->input->post('email'),
             'name' => $this->input->post('name'));
-    }}
+    }
+    public function loadContactenAanmaken() {
+        $this->load->helper('url');
+        $this->load->view('contactenAanmaken.html');
+    }
+    public function loadContactenLijstOpvragen() {
+        $this->load->helper('url');
+        $this->load->view('contactenLijstOpvragen.html');
+    }
+    public function loadContactenWijzigen() {
+        $this->load->helper('url');
+        $this->load->view('contactenWijzigen.html');
+    }
+}
