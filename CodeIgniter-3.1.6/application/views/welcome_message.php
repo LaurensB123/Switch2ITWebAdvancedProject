@@ -75,9 +75,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     $result = $CI->Contact_Model->get_all_contacten();
 
     var_dump($data);
-
-
     ?>
+
 	<div id="body">
 		<p>The page you are looking at is being generated dynamically by CodeIgniter.</p>
 
