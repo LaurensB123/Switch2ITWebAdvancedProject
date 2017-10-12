@@ -31,5 +31,20 @@ class Welcome extends CI_Controller {
             echo "Fail";
 
         }
+
+
+        $date = array('ID' => $this->input->post('id'),
+            'email' => $this->input->post('email'),
+            'name' => $this->input->post('name'));
+              $this->addContacten->form_insert($data);
 	}
+<<<<<<< HEAD
+
+
+	public  function home(){
+
+
+    }
+=======
+>>>>>>> 1fb97f35acea3c1868e9eaeda0dad528ad73140a
 }
