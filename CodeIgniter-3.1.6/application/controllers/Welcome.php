@@ -20,6 +20,14 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('welcome_message');
+		$this->home();
 	}
+
+	public  function home(){
+	    $this->load->model('model_users');
+
+	    $data['contacten'] = $this->model_users->getUsers();
+
+
+    }
 }
