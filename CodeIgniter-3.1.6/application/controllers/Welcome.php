@@ -21,12 +21,21 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 		$this->home();
+		$this->load->model('Model_users');
+		$res = $this->Model_users->getNames();
+        if($res){
+            $data['result'] = $res;
+            $this->load->view('welcome_message', $data);
+
+        } else {
+
+            echo "Fail";
+
+        }
 	}
 
 	public  function home(){
-	    $this->load->model('model_users');
 
-	    $data['contacten'] = $this->model_users->getUsers();
 
 
     }
