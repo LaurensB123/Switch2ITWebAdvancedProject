@@ -21,7 +21,8 @@ class Welcome extends CI_Controller
      */
     public function index()
     {
-
+        $this->load->helper('form');
+        $this->load->library('form_validation');
         $this->load->helper('url');
         $this->load->model('Model_users');
         $res = $this->Model_users->getNames();
@@ -41,7 +42,9 @@ class Welcome extends CI_Controller
             'name' => $this->input->post('name'));
     }
     public function addContacts() {
-
+        $this->load->helper('url');
+        $this->load->helper('form');
+        $this->load->library('form_validation');
         $this->load->model('Model_users');
         $data = array(
             'ID' => $this->input->post('ID'),
@@ -49,19 +52,24 @@ class Welcome extends CI_Controller
             'email' => $this->input->post('email')
         );
         $this->Model_users->addContacten($data);
-        $data['message'] = 'Data Inserted Successfully';
-
+        $this->load->view('welcome_message', $data);
 
     }
     public function loadContactenAanmaken() {
+        $this->load->helper('form');
+        $this->load->library('form_validation');
         $this->load->helper('url');
         $this->load->view('contactenAanmaken');
     }
     public function loadContactenLijstOpvragen() {
+        $this->load->helper('form');
+        $this->load->library('form_validation');
         $this->load->helper('url');
         $this->load->view('contactenLijstOpvragen.html');
     }
     public function loadContactenWijzigen() {
+        $this->load->helper('form');
+        $this->load->library('form_validation');
         $this->load->helper('url');
         $this->load->view('contactenWijzigen.html');
     }

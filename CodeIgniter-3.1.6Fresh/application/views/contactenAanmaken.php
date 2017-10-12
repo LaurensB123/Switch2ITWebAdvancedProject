@@ -5,18 +5,17 @@
     <title>Maak contact aan</title>
 </head>
 <body>
+<?php echo form_open('Welcome/addContacts'); ?>
+<?php echo form_label('ID :'); ?><br/>
+<?php echo form_input(array('id' => 'ID', 'name' => 'ID')); ?><br />
 
-<form action="<?php echo site_url('Welcome/addContacts/uri')?>" method ="post" >
-    ID:<br>
-    <input type="text" id="ID">
-    <br>
-    Name:<br>
-    <input type="text" id="name">
-    <br>
-    E-mail:<br>
-    <input type="text" id="email">
-    <br><br>
-    <input type="submit" value="Aanmaken">
-</form>
+<?php echo form_label('Email :'); ?><br />
+<?php echo form_input(array('id' => 'email', 'name' => 'email')); ?><br />
+
+<?php echo form_label('Name'); ?><br />
+<?php echo form_input(array('id' => 'name', 'name' => 'name')); ?>
+<br />
+<?php echo form_submit(array('id' => 'submit', 'value' => 'Submit')); ?>
+<?php echo form_close(); ?><br/>
 </body>
 </html>
