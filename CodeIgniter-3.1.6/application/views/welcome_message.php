@@ -11,8 +11,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </head>
 <body>
 
-<button type="button" onclick="alert('')">Contact aanmaken</button>
-<button type="button" onclick="alert('')">Contact lijst opvragen</button>
-<button type="button" onclick="alert('')">Contact wijzigen</button>
+<button type="button" onclick="contactenAanmaken">Contact aanmaken</button>
+<button type="button" onclick="contactenLijstOpvragen">Contact lijst opvragen</button>
+<button type="button" onclick="ContactenWijzigen">Contact wijzigen</button>
 </body>
 </html>
