@@ -20,7 +20,6 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->home();
 		$this->load->model('Model_users');
 		$res = $this->Model_users->getNames();
         if($res){
@@ -33,9 +32,4 @@ class Welcome extends CI_Controller {
 
         }
 	}
-
-	public  function home(){
-
-
-    }
 }
