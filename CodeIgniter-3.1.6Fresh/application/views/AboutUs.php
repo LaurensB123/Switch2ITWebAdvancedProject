@@ -91,10 +91,10 @@
             <div class="w3-container">
                 <h3>Koen</h3>
                 <h4>Switch2IT</h4>
-                <p>Blablabla</p>
-                <p>Blablabla</p>
-                <p>Blablabla</p>
-                <p>Blablabla</p>
+                <p>Hogeschool PXL</p>
+                <p>Internet of Everything (IoE)</p>
+                <p>Internet of Everything (IoE)</p>
+                <p>Internet of Everything (IoE)</p>
             </div>
         </div>
     </div>
