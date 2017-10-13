@@ -1,3 +1,4 @@
+<?php ?>
 <!DOCTYPE html>
 <html>
 <title>About Us</title>
@@ -21,7 +22,7 @@
     <div class="w3-row"><br>
 
         <div class="w3-quarter">
-            <img src="/application/images/Laurens.jpg" alt="Laurens" style="width:45%" class="w3-circle w3-hover-opacity">
+            <img src="<?php echo base_url(); ?>images/Laurens.JPG" alt="Laurens" style="width:45%" class="w3-circle w3-hover-opacity">
             <h3>Laurens Bynens</h3>
             <p>Software Management</p>
         </div>
@@ -53,7 +54,7 @@
     <div class="w3-quarter">
         <h2>Our Work</h2>
         <p>In het kader van ons eindwerk voor Web Advanced hebben we deze pagina aangemaakt.
-        Het doel van deze pagina is om ons team voor te stellen.</p>
+            Het doel van deze pagina is om ons team voor te stellen.</p>
     </div>
 
     <div class="w3-quarter">
