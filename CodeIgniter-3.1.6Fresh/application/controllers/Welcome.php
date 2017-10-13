@@ -41,7 +41,9 @@ class Welcome extends CI_Controller
             'email' => $this->input->post('email'),
             'name' => $this->input->post('name'));
     }
-    public function addContacts() {
+
+    public function addContacts()
+    {
         $this->load->helper('url');
         $this->load->helper('form');
         $this->load->library('form_validation');
@@ -55,22 +57,37 @@ class Welcome extends CI_Controller
         $this->load->view('welcome_message', $data);
 
     }
-    public function loadContactenAanmaken() {
+
+    public function loadContactenAanmaken()
+    {
         $this->load->helper('form');
         $this->load->library('form_validation');
         $this->load->helper('url');
         $this->load->view('contactenAanmaken');
     }
-    public function loadContactenLijstOpvragen() {
+
+    public function loadContactenLijstOpvragen()
+    {
         $this->load->helper('form');
         $this->load->library('form_validation');
         $this->load->helper('url');
         $this->load->view('contactenLijstOpvragen.html');
     }
-    public function loadContactenWijzigen() {
+
+    public function loadContactenWijzigen()
+    {
         $this->load->helper('form');
         $this->load->library('form_validation');
         $this->load->helper('url');
         $this->load->view('contactenWijzigen.html');
     }
+
+    public function loadAboutUs()
+    {
+        $this->load->helper('form');
+        $this->load->library('form_validation');
+        $this->load->helper('url');
+        $this->load->view('AboutUs.html');
+    }
+
 }
