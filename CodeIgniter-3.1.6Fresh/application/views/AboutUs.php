@@ -35,7 +35,7 @@
 
         <div class="w3-quarter">
             <img src="<?php echo base_url(); ?>images/Student.jpg" alt="Student" style="width:45%" class="w3-circle w3-hover-opacity">
-            <h3>Student</h3>
+            <h3>Koen Hendrikx</h3>
             <p>Switch2IT</p>
         </div>
 
@@ -89,7 +89,7 @@
         <div class="w3-card-2 w3-white">
             <img src="<?php echo base_url(); ?>images/Student2.jpg" style="width:100%">
             <div class="w3-container">
-                <h3>Student</h3>
+                <h3>Koen</h3>
                 <h4>Switch2IT</h4>
                 <p>Blablabla</p>
                 <p>Blablabla</p>
