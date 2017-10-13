@@ -11,7 +11,7 @@
 
 <!-- Image Header -->
 <div class="w3-display-container w3-animate-opacity">
-    <img src="/application/images/header1.jpg" style="width:100%;min-height:350px;max-height:600px;">
+    <img src="<?php echo base_url(); ?>images/header1.JPG" style="width:100%;min-height:350px;max-height:600px;">
 </div>
 
 <!-- Team Container -->
@@ -28,19 +28,19 @@
         </div>
 
         <div class="w3-quarter">
-            <img src="/application/images/Hannah.jpg" alt="Hannah" style="width:45%" class="w3-circle w3-hover-opacity">
+            <img src="<?php echo base_url(); ?>images/Hannah.JPG" alt="Hannah" style="width:45%" class="w3-circle w3-hover-opacity">
             <h3>Hannah Patronoudis</h3>
             <p>Software Management</p>
         </div>
 
         <div class="w3-quarter">
-            <img src="" alt="Student" style="width:45%" class="w3-circle w3-hover-opacity">
+            <img src="<?php echo base_url(); ?>images/Student.jpg" alt="Student" style="width:45%" class="w3-circle w3-hover-opacity">
             <h3>Student</h3>
             <p>Switch2IT</p>
         </div>
 
         <div class="w3-quarter">
-            <img src="" alt="Leerkracht" style="width:45%" class="w3-circle w3-hover-opacity">
+            <img src="<?php echo base_url(); ?>images/Student.jpg" alt="Leerkracht" style="width:45%" class="w3-circle w3-hover-opacity">
             <h3>J. Willekens</h3>
             <p>Leerkracht</p>
         </div>
@@ -59,7 +59,7 @@
 
     <div class="w3-quarter">
         <div class="w3-card-2 w3-white">
-            <img src="/application/images/Laurens2.jpg" style="width:100%">
+            <img src="<?php echo base_url(); ?>images/Laurens2.jpg" style="width:100%">
             <div class="w3-container">
                 <h3>Laurens</h3>
                 <h4>Software Management</h4>
@@ -73,7 +73,7 @@
 
     <div class="w3-quarter">
         <div class="w3-card-2 w3-white">
-            <img src="/application/images/Hannah2.jpg" style="width:100%">
+            <img src="<?php echo base_url(); ?>images/Hannah2.jpg" style="width:100%">
             <div class="w3-container">
                 <h3>Hannah</h3>
                 <h4>Software Management</h4>
@@ -87,7 +87,7 @@
 
     <div class="w3-quarter">
         <div class="w3-card-2 w3-white">
-            <img src="/application/images/Student2.jpg" style="width:100%">
+            <img src="<?php echo base_url(); ?>images/Student2.jpg" style="width:100%">
             <div class="w3-container">
                 <h3>Student</h3>
                 <h4>Switch2IT</h4>
