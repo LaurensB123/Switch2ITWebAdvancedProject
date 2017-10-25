@@ -3,6 +3,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href="\bootstrap\css\bootstrap.css\bootstrap.min.css" rel="stylesheet" />
+    <link href="\bootstrap\css\bootstrap-responsive.css\bootstrap-responsive.min.css" rel="stylesheet" />
+
     <link href="http://fonts.googleapis.com/css?family=Cabin:400,500,600,bold" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=PT+Sans+Narrow:regular,bold" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/HomeStyle.css">
