@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>Insert Update Delete Data using Codeigniter</title>
+    <title>Contacten Lijst</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 </head>
 <body>
@@ -10,8 +10,8 @@
         <table class="table table-bordered">
             <tr>
                 <th>ID</th>
-                <th>First Name</th>
-                <th>Last Name</th>
+                <th>Email</th>
+                <th>Name</th>
             </tr>
             <?php
             if($fetch_data->num_rows() > 0)
