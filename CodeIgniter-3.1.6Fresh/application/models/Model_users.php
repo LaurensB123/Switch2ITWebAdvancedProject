@@ -13,6 +13,7 @@ class Model_users extends CI_Model
     function __construct()
     {
         parent::__construct();
+        $this->load->database();
     }
 
     function addContacten($data) {
@@ -34,14 +35,8 @@ class Model_users extends CI_Model
 
     function getContacten(){
         $this->load->database();
-        $query = $this->db->query('SELECT * FROM Contacten');
-
-        if ($query->num_rows() > 0){
-            return $query->result();
-        }else{
-            return NULL;
-        }
-
-    }
-
-}
+        $this->db->select("*");
+        $this->db->from("Contacten");
+        $query = $this->db->get();
+        return $query;
+    } }

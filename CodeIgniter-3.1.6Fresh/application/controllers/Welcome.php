@@ -21,25 +21,14 @@ class Welcome extends CI_Controller
      */
     public function index()
     {
+        parent::__construct();
+        $this->load->database();
         $this->load->helper('form');
         $this->load->library('form_validation');
         $this->load->helper('url');
-        $this->load->model('Model_users');
-        $res = $this->Model_users->getNames();
-        if ($res) {
-            $data['result'] = $res;
-            $this->load->view('welcome_message', $data);
-
-        } else {
-
-            echo "Fail";
-
-        }
+        $this->load->view('welcome_message');
 
 
-        $date = array('ID' => $this->input->post('id'),
-            'email' => $this->input->post('email'),
-            'name' => $this->input->post('name'));
     }
 
     public function addContacts()
@@ -71,7 +60,10 @@ class Welcome extends CI_Controller
         $this->load->helper('form');
         $this->load->library('form_validation');
         $this->load->helper('url');
-        $this->load->view('contactenLijstOpvragen.html');
+        $this->load->model('Model_users');
+        $data["fetch_data"] = $this->Model_users->getContacten();
+        $this->load->view("contactenLijstOpvragen", $data);
+
     }
 
     public function loadContactenWijzigen()
