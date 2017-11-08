@@ -46,6 +46,34 @@ class Welcome extends CI_Controller
         $this->load->view('welcome_message', $data);
 
     }
+    public function editData()
+    {
+
+        $this->load->library('form_validation');
+        $id= $this->input->post('ID');
+        $this->load->model('editModel');
+        $data['info']=$this->editModel->retriveData($id);
+        $this->load->view('editstudent',$data);
+    }
+
+
+
+    public function editnewData(){
+
+        $data=array(
+
+            'ID' => $this->input->post('ID'),
+            'name' => $this->input->post('name'),
+            'email' => $this->input->post('email'),
+
+
+
+        );
+
+        $this->load->model('editModel');
+        $this->editModel->editData($data);
+        $this->load->view('welcome_message', $data);
+    }
 
     public function loadContactenAanmaken()
     {
@@ -71,7 +99,7 @@ class Welcome extends CI_Controller
         $this->load->helper('form');
         $this->load->library('form_validation');
         $this->load->helper('url');
-        $this->load->view('contactenWijzigen.html');
+        $this->load->view('student');
     }
 
     public function loadAboutUs()

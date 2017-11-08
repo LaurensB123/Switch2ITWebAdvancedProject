@@ -23,8 +23,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = '';
-
+$active_group = 'default';
+$active_record = TRUE;
+$config['base_url'] = 'http://192.168.33.22/webadvanced/Switch2ITWebAdvancedProject/CodeIgniter-3.1.6Fresh/';
+$config['encryption_key'] = '23456789';
 /*
 |--------------------------------------------------------------------------
 | Index File
