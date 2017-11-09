@@ -1,23 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Wijzig contact</title>
-</head>
-<body>
+<html>
+<title>Wijzig contact</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body class="w3-content" style="max-width:1300px">
 
-<form action="">
-    ID:<br>
-    <input type="text" id="id">
-    <br>
-    Name:<br>
-    <input type="text" id="name">
-    <br>
-    E-mail:<br>
-    <input type="text" id="email">
-    <br><br>
-    <input type="submit" value="Wijzigen">
+<div class="w3-row" id="contact">
+    <div class="w3-half w3-teal w3-container" style="height:700px">
+        <div class="w3-padding-64 w3-padding-large">
+            <h1>Welcome</h1>
+            <p class="w3-opacity">Add contact</p>
+            <form class="w3-container w3-card w3-padding-32 w3-white" action="/action_page.php" target="_blank">
+                <form action="">
+                    <div class="w3-section">
+                        <label>ID:</label>
+                        <input class="w3-input" style="width:100%;" type="text" id="id">
+                    </div>
 
-</form>
+                    <div class="w3-section">
+                        Name:<br>
+                        <input class="w3-input" style="width:100%;" type="text" id="name">
+                    </div>
+
+                    <div class="w3-section">
+                        E-mail:<br>
+                        <input class="w3-input" style="width:100%;" type="text" id="email">
+                    </div>
+
+                    <div class="w3-section">
+                        <input class="w3-input" style="width:100%;" type="submit" value="Wijzigen">
+                    </div>
+
+                </form>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-black w3-padding-16">
+    <p>Powered by Team 5</a></p>
+</footer>
+
 </body>
 </html>
