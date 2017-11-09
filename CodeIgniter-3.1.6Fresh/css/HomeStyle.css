@@ -27,7 +27,7 @@ body {
     width: 600px;
 }
 
-.button {
+#button {
     position: relative;
     top: 100px;
     left: 200px;
