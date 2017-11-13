@@ -20,7 +20,7 @@ class  Contact {
     function read() {
         //select all query
         $query = "SELECT
-                    ID, email, name
+                    ID as id, email, name
                   FROM
                     " . $this->table_name;
 
