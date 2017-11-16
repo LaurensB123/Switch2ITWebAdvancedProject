@@ -11,7 +11,7 @@ namespace Model;
 
 interface PersonRepository
 {
-    public function findPersonByID($id);
+    public function findAllPersons();
 
 //CRUD
     public function add($id); //nieuwe persoon toevoegen in database
