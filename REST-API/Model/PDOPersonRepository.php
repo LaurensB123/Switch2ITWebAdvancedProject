@@ -21,7 +21,7 @@ class PDOPersonRepository implements PersonRepository
     public function findAllPersons()
     {
         try {
-            $statement = $this->connection->prepare("SELECT * FROM Afspraak");
+            $statement = $this->connection->prepare("SELECT * FROM Contacten");
             //var_dump($statement);
             $statement->execute();
             $result = $statement->fetchAll(\PDO::FETCH_ASSOC);
