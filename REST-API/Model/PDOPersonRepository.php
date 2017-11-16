@@ -9,7 +9,7 @@
 
 namespace Model;
 
-class PDOPersonRepository implements EventRepository
+class PDOPersonRepository implements PersonRepository
 {
     private $connection = null;
 
@@ -37,7 +37,7 @@ class PDOPersonRepository implements EventRepository
             return null;
         }
     }
-    
+
     public function add($id)
     {
         //  $logger = \Logger::getLogger("Main");
