@@ -18,20 +18,19 @@ class PDOPersonRepository implements PersonRepository
         $this->connection = $connection;
     }
 
-    public function findPersonByID($id)
+    public function findAllPersons()
     {
         try {
-            $statement = $this->connection->prepare("SELECT PersoonNaam,PersoonID FROM Persoon WHERE PersoonID=?");
-            var_dump($statement);
-            $statement->bindParam(1, $id, \PDO::PARAM_INT);
+            $statement = $this->connection->prepare("SELECT * FROM Afspraak");
+            //var_dump($statement);
             $statement->execute();
             $result = $statement->fetchAll(\PDO::FETCH_ASSOC);
-            if (count($result) > 0) {
-
-                return new Persoon($result[0]['PersoonID'], $result[0]['PersoonNaam']);
-            } else {
-                return null;
+            $rows = [];
+            //    var_dump($result);
+            foreach ($result as $row) {
+                $rows[] = new Event($row['EventID'], $row['PersoonID'], $row['StartDatum'], $row['EindDatum'], $row['beschrijving']);
             }
+            return $rows;
         } catch (\Exception $exception) {
             var_dump($exception);
             return null;
