@@ -21,7 +21,7 @@ class PDOPersonRepository implements PersonRepository
     public function findPersonByID($id)
     {
         try {
-            $statement = $this->connection->prepare("SELECT PersoonNaam,PersoonID FROM Persoon WHERE PersoonID=?");
+            $statement = $this->connection->prepare("SELECT ID as id, email, name FROM Contacten");
             var_dump($statement);
             $statement->bindParam(1, $id, \PDO::PARAM_INT);
             $statement->execute();
