@@ -21,8 +21,22 @@ class PDOPersonRepository implements PersonRepository
     public function readContacts()
     {
         try {
+<<<<<<< HEAD
             $statement = $this->connection->prepare("SELECT ID as id, email, name FROM Contacten");
             //var_dump($statement);
+=======
+<<<<<<< HEAD
+            $statement = $this->connection->prepare("SELECT * FROM Contacten");
+            $statement->execute();
+            $result = $statement->fetchAll(\PDO::FETCH_ASSOC);
+            $rows = [];
+            //    var_dump($result);
+            foreach ($result as $row) {
+                $rows[] = new Event($row['name'], $row['ID'], $row['email']);
+=======
+            $statement = $this->connection->prepare("SELECT PersoonNaam,PersoonID FROM Persoon WHERE PersoonID=?");
+            var_dump($statement);
+>>>>>>> 91f7f6ed0d4b665e24b665cb8d2fa7737a9bd4c1
             $statement->bindParam(1, $id, \PDO::PARAM_INT);
             $statement->execute();
             $result = $statement->fetchAll(\PDO::FETCH_ASSOC);
@@ -30,6 +44,7 @@ class PDOPersonRepository implements PersonRepository
                 return new Contact($result[0]['ID'], $result[0]['Email'], $result[0]['Name']);
             } else {
                 return null;
+>>>>>>> 0237b64df0b362d1f45a20fed7922a9aa70683b1
             }
         } catch (\Exception $exception) {
             //var_dump($exception);
@@ -40,8 +55,6 @@ class PDOPersonRepository implements PersonRepository
 
     public function addContact($id)
     {
-        //  $logger = \Logger::getLogger("Main");
-        // $logger->error("LOG THE POST ARRAY:" . json_encode($_REQUEST));
         try {
             $data = json_decode(file_get_contents('php://input'));
 
@@ -49,6 +62,7 @@ class PDOPersonRepository implements PersonRepository
             $email = $data->email;
             $name = $data->name;
 
+<<<<<<< HEAD
             $statement = $this->connection->prepare('INSERT INTO Contacten VALUES (' . $id . ', :ID, :email, :name)');
 
             //$statement->bindParam(1, $id, \Pdo::PARAM_INT);
@@ -56,6 +70,14 @@ class PDOPersonRepository implements PersonRepository
             $statement->bindParam(':email', $email, \Pdo::PARAM_STR);
             $statement->bindParam(':name', $name, \Pdo::PARAM_STR);
             //var_dump($statement);
+=======
+            $statement = $this->connection->prepare('INSERT INTO Contacten VALUES (' . $id . ', :ID, :naam, :email');
+
+            //$statement->bindParam(1, $id, \Pdo::PARAM_INT);
+            $statement->bindParam(':ID', $ID, \Pdo::PARAM_INT);
+            $statement->bindParam(':naam', $naam, \Pdo::PARAM_STR);
+            $statement->bindParam(':email', $email, \Pdo::PARAM_STR);
+>>>>>>> 91f7f6ed0d4b665e24b665cb8d2fa7737a9bd4c1
             $result = $statement->execute();
             //$result = $statement->fetchAll(\PDO::FETCH_ASSOC);
             return $result;
@@ -71,7 +93,11 @@ class PDOPersonRepository implements PersonRepository
         try {
             $statement = $this->connection->prepare("
             DELETE FROM Contacten
+<<<<<<< HEAD
             WHERE id=?");
+=======
+            WHERE ID=?");
+>>>>>>> 91f7f6ed0d4b665e24b665cb8d2fa7737a9bd4c1
 
             $statement->bindParam(1, $id, \Pdo::PARAM_INT);
             $statement->execute();
@@ -92,18 +118,16 @@ class PDOPersonRepository implements PersonRepository
             //$result = $this->connection->exec('UPDATE Afspraak SET EventID = 1, PersoonID = 1, StartDatum = "2020-10-10", Einddatum = "2025-10-10", Beschrijving = "Test2" WHERE EventID = 1');
 
             $persoonID = $data->PersoonID;
-            $startDatum = $data->StartDatum;
-            $eindDatum = $data->EindDatum;
-            $beschrijving = $data->beschrijving;
+            $persoonNaam = $data->PersoonNaam;
+            $PersoonEmail = $data->PersoonEmail;
 
-            $statement = $this->connection->prepare('UPDATE Afspraak SET PersoonID = :persID, StartDatum = :startDatum, EindDatum = :eindDatum, beschrijving = :beschrijving WHERE EventID =' . $id);
+            $statement = $this->connection->prepare('UPDATE Contacten SET PersoonID = :ID, PersoonNaam = :naam, PersoonEmail = :email WHERE PersoonID =' . $id);
 
             //waardes worden uitgelezen maar update niet ???
             //$statement->bindParam(1,$id, \Pdo::PARAM_INT);
-            $statement->bindParam(':persID', $persoonID, \Pdo::PARAM_INT);
-            $statement->bindParam(':startDatum', $startDatum, \Pdo::PARAM_STR);
-            $statement->bindParam(':eindDatum', $eindDatum, \Pdo::PARAM_STR);
-            $statement->bindParam(':beschrijving', $beschrijving, \Pdo::PARAM_STR);
+            $statement->bindParam(':ID', $persoonID, \Pdo::PARAM_INT);
+            $statement->bindParam(':naam', $persoonNaam, \Pdo::PARAM_STR);
+            $statement->bindParam(':email', $PersoonEmail, \Pdo::PARAM_STR);
 
             $result = $statement->execute();
             var_dump($result);
@@ -116,5 +140,10 @@ class PDOPersonRepository implements PersonRepository
             return null;
         }
 
+<<<<<<< HEAD
     }*/
+=======
+    }
+
+>>>>>>> 91f7f6ed0d4b665e24b665cb8d2fa7737a9bd4c1
 }
