@@ -14,39 +14,30 @@ use View\View;
 
 class PersonController
 {
-    private $PersonRepository;
+    private $ContactRepository;
     private $view;
 
-    public function __construct(PersonRepository $PersonRepository, View $view)
+    public function __construct(PersonRepository $ContactRepository, View $view)
     {
-        $this->PersonRepository = $PersonRepository;
+        $this->ContactRepository = $ContactRepository;
         $this->view = $view;
     }
 
-     public function findPersonByID($id = null)
+     public function readContacts()
     {
-        $event = $this->PersonRepository->findPersonByID($id);
-        $this->view->show(['Persoon' => $event]);
+        $contact = $this->ContactRepository->readContacts();
+        $this->view->show(['Contact' => $contact]);
     }
-
 
     public function add($id)
     {
-        $ev = $this->PersonRepository->add($id);
+        $contact = $this->ContactRepository->addContact($id);
         //$this->view->show($ev);
     }
 
     public function remove($id)
     {
 
-        $ev = $this->PersonRepository->remove($id);
+        $contact = $this->ContactRepository->removeContact($id);
     }
-
-    public function update($id)
-    {
-
-        $ev = $this->PersonRepository->update($id);
-        //$this->view->show($ev);
-    }
-
 }

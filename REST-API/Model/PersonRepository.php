@@ -11,10 +11,9 @@ namespace Model;
 
 interface PersonRepository
 {
-    public function findPersonByID($id);
+    public function readContacts();
 
 //CRUD
-    public function add($id); //nieuwe persoon toevoegen in database
-    public function remove($id);
-    public function update($id);
+    public function addContact($id); //nieuw contact toevoegen in database
+    public function removeContact($id);
 }

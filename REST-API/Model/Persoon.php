@@ -6,7 +6,7 @@
  * Date: 16/11/2017
  * Time: 12:42
  */
-namespace Model;
+/*namespace Model;
 
 
 class Persoon
@@ -52,4 +52,4 @@ class Persoon
         $this->persoonEmail = $persoonEmail;
     }
 
-}
+}*/

@@ -18,45 +18,43 @@ class PDOPersonRepository implements PersonRepository
         $this->connection = $connection;
     }
 
-    public function findPersonByID($id)
+    public function readContacts()
     {
         try {
-            $statement = $this->connection->prepare("SELECT PersoonNaam,PersoonID FROM Persoon WHERE PersoonID=?");
-            var_dump($statement);
+            $statement = $this->connection->prepare("SELECT ID as id, email, name FROM Contacten");
+            //var_dump($statement);
             $statement->bindParam(1, $id, \PDO::PARAM_INT);
             $statement->execute();
             $result = $statement->fetchAll(\PDO::FETCH_ASSOC);
             if (count($result) > 0) {
-
-                return new Persoon($result[0]['PersoonID'], $result[0]['PersoonNaam']);
+                return new Contact($result[0]['ID'], $result[0]['Email'], $result[0]['Name']);
             } else {
                 return null;
             }
         } catch (\Exception $exception) {
-            var_dump($exception);
+            //var_dump($exception);
             return null;
+            //encoderen naar JSON??????????
         }
     }
 
-    public function add($id)
+    public function addContact($id)
     {
         //  $logger = \Logger::getLogger("Main");
         // $logger->error("LOG THE POST ARRAY:" . json_encode($_REQUEST));
         try {
             $data = json_decode(file_get_contents('php://input'));
 
-            $persoonID = $data->PersoonID;
-            $startDatum = $data->StartDatum;
-            $eindDatum = $data->EindDatum;
-            $beschrijving = $data->beschrijving;
+            $id = $data->id;
+            $email = $data->email;
+            $name = $data->name;
 
-            $statement = $this->connection->prepare('INSERT INTO Afspraak VALUES (' . $id . ', :persID, :startDatum, :eindDatum, :beschrijving)');
+            $statement = $this->connection->prepare('INSERT INTO Contacten VALUES (' . $id . ', :ID, :email, :name)');
 
             //$statement->bindParam(1, $id, \Pdo::PARAM_INT);
-            $statement->bindParam(':persID', $persoonID, \Pdo::PARAM_INT);
-            $statement->bindParam(':startDatum', $startDatum, \Pdo::PARAM_STR);
-            $statement->bindParam('eindDatum', $eindDatum, \Pdo::PARAM_STR);
-            $statement->bindParam(':beschrijving', $beschrijving, \Pdo::PARAM_STR);
+            $statement->bindParam(':ID', $id, \Pdo::PARAM_INT);
+            $statement->bindParam(':email', $email, \Pdo::PARAM_STR);
+            $statement->bindParam(':name', $name, \Pdo::PARAM_STR);
             //var_dump($statement);
             $result = $statement->execute();
             //$result = $statement->fetchAll(\PDO::FETCH_ASSOC);
@@ -68,12 +66,12 @@ class PDOPersonRepository implements PersonRepository
         }
     }
 
-    public function remove($id)
+    public function removeContact($id)
     {
         try {
             $statement = $this->connection->prepare("
-            DELETE FROM Afspraak
-            WHERE EventID=?");
+            DELETE FROM Contacten
+            WHERE id=?");
 
             $statement->bindParam(1, $id, \Pdo::PARAM_INT);
             $statement->execute();
@@ -86,7 +84,7 @@ class PDOPersonRepository implements PersonRepository
 
     }
 
-    public function update($id)
+    /*public function update($id)
     {
         try {
             //parse_str(json_decode(file_get_contents('php://input')), $_PUT);
@@ -118,7 +116,5 @@ class PDOPersonRepository implements PersonRepository
             return null;
         }
 
-    }
-
-
+    }*/
 }
