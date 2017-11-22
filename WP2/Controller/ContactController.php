@@ -6,15 +6,15 @@
  * Time: 17:59
  */
 
-use Model\ContactRepository;
-use View\View;
+use Model\PDOContactRepository;
+use View\ContactJsonView;
 
 class ContactController
 {
     private $contactRepository;
     private $view;
 
-    public function __construct(ContactRepository $contactRepository, View $view)
+    public function __construct(PDOContactRepository $contactRepository, ContactJsonView $view)
     {
         $this->contactRepository = $contactRepository;
         $this->view = $view;

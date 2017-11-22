@@ -12,7 +12,11 @@ require_once 'ContactRepository.php';
 class PDOContactRepository implements ContactRepository
 {
     private $connection = null;
-    private $contactDAO = null;
+
+    public function __construct(\PDO $connection)
+    {
+        $this->connection = $connection;
+    }
 
     public function readContacts()
     {
@@ -41,7 +45,6 @@ class PDOContactRepository implements ContactRepository
         } catch (\Exception $exception) {
             //var_dump($exception);
             return null;
-            //encoderen naar JSON??????????
         }
     }
 

@@ -5,6 +5,11 @@
  * Date: 22/11/2017
  * Time: 15:57
  */
+header("Access-Control-Allow-Origin");
+header("Content-Type: application/json; charset=UTF-8");
+header("Access-Control-Allow-Methods: POST");
+header("Access-Control-Origin: *");
+
 
 require 'altoRouter/AltoRouter.php';
 require_once 'Model/PDOContactRepository.php';

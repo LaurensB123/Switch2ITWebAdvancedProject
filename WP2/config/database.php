@@ -1,5 +1,5 @@
 <?php
-
+/*
 class Database {
     //Database credentials
     private $host = "localhost";
@@ -26,4 +26,4 @@ class Database {
     public function closeConnection() {
         $this->conn=null;
     }
-}
+}*/
