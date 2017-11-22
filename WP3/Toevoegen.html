@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    First name:<br>
+    <input type="text" id="firstn" name="first name"><br>
+    Last name:<br>
+    <input type="text" id="lastn" name="last name">
+</form>
+<button id="post">Submit Data</button>
+</body>
+<script>
+    var button = document.getElementById('post');
+    var firstname = document.getElementById('firstn').value;
+    var lastname = document.getElementById('lastn').value;
+    button.addEventListener('click', _ => {
+        fetch("http://example.com/api/endpoint/", {
+            method: "post",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+
+            body: JSON.stringify({
+                first_name: firstname,
+                last_name: lastname
+            })
+        })
+    })
+
+</script>
+</html>
