@@ -7,17 +7,12 @@
  */
 
 namespace Model;
-
+require_once 'ContactRepository.php';
 
 class PDOContactRepository implements ContactRepository
 {
     private $connection = null;
     private $contactDAO = null;
-
-    public function __construct(PDOReadContactsDAO $contactDAO)
-    {
-        $this->contactDAO = $contactDAO;
-    }
 
     public function readContacts()
     {

@@ -7,6 +7,9 @@
  */
 
 require 'altoRouter/AltoRouter.php';
+require_once 'Model/PDOContactRepository.php';
+require_once 'View/ContactJsonView.php';
+require_once 'Controller/ContactController.php';
 
 use View\ContactJsonView;
 use Model\PDOContactRepository;

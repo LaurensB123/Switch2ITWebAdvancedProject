@@ -6,7 +6,7 @@
  * Time: 14:35
  */
 
-namespace data;
+/*namespace data;
 
 
 class DBConfig
@@ -14,4 +14,4 @@ class DBConfig
     public static $DB_CONNSTRING = "mysql:host=localhost;dbname=ProjectWebAdvanced";
     public static $DB_USERNAME = "root";
     public static $DB_PASSWORD = "root";
-}
+}*/

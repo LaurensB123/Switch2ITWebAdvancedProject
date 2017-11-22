@@ -7,7 +7,7 @@
  */
 
 namespace View;
-
+require_once 'View.php';
 
 class ContactJsonView implements View
 {

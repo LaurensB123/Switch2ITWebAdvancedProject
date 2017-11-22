@@ -6,7 +6,7 @@
  * Time: 12:37
  */
 
-namespace Model;
+/*namespace Model;
 
 require_once("../entities/Contact.php");
 require_once("DBConfig.php");
@@ -25,7 +25,7 @@ class PDOReadContactsDAO
     }
 
     public static function readAllContacts() {
-/*        $lijst = array();
+        $lijst = array();
         $sql = "SELECT ID as id, email, name FROM Contacten";
 
         $dbh = new PDO(DBConfig::$DB_CONNSTRING, DBConfig::$DB_USERNAME, DBConfig::$DB_PASSWORD);
@@ -35,8 +35,8 @@ class PDOReadContactsDAO
             array_push($lijst, $contact);
         }
         $dbh = null;
-        return $lijst;*/
+        return $lijst;
 
 
     }
-}
+}*/
