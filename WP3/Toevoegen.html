@@ -16,7 +16,7 @@
 <script>
     var button = document.getElementById('post');
     var firstname = document.getElementById('firstn').value;
-    var lastname = document.getElementById('lastn').value;
+    var lastname = document.getElementById('name').value;
     button.addEventListener('click', _ => {
         fetch('https://jsonplaceholder.typicode.com/posts', {
             method: 'POST',

@@ -15,8 +15,10 @@
 <script>
     var button = document.getElementById('post');
     var ID = document.getElementById('ID').value;
+    var urlfetch = "https://jsonplaceholder.typicode.com/posts/";
+    var url = urlfetch.concat(ID);
     button.addEventListener('click', _ => {
-        fetch('https://jsonplaceholder.typicode.com/posts/' + ID, {
+        fetch( url , {
             method: 'DELETE'
         })
             .then(function(data) {
