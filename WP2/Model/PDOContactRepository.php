@@ -19,7 +19,6 @@ class PDOContactRepository implements ContactRepository
         try {
             $statement = $this->connection->prepare("SELECT ID AS id, email, name FROM Contacten");
 
-            $statement = $this->connection->prepare("SELECT * FROM Contacten");
             $statement->execute();
             $result = $statement->fetchAll(\PDO::FETCH_ASSOC);
             $rows = [];
@@ -27,10 +26,10 @@ class PDOContactRepository implements ContactRepository
             foreach ($result as $row) {
                 $rows[] = new Event($row['name'], $row['ID'], $row['email']);
 
-                $statement = $this->connection->prepare("SELECT PersoonNaam,PersoonID FROM Persoon WHERE PersoonID=?");
+                $statement = $this->connection->prepare("SELECT ID as id, email, name FROM Contacten");
                 var_dump($statement);
 
-                $statement->bindParam(1, $id, \PDO::PARAM_INT);
+                $statement->bindParam(1, id, \PDO::PARAM_INT);
                 $statement->execute();
                 $result = $statement->fetchAll(\PDO::FETCH_ASSOC);
                 if (count($result) > 0) {
