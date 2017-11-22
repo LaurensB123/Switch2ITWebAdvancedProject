@@ -6,6 +6,32 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+
+<script>
+    function validateForm() {
+        var ID = document.getElementById('id');
+        var email = document.getElementById('email');
+        var name = document.getElementById('name');
+
+        if (isNaN(ID)) {
+           alert("ID Moet een nummer zijn");
+           return false;
+        }
+        if (!email.contains("@")) {
+            alert("Geen valid email Adress");
+            return false;
+        }
+        if (!isNaN(name)) {
+            alert("Geen geldige naam");
+            return false;
+        }
+    }
+</script>
+<!-- <form name="myForm" onsubmit="return validateForm()" method="post">
+    Name: <input type="text" name="fname">
+    <input type="submit" value="Submit">
+</form> -->
+
 <body>
 
 <?php echo form_open('Welcome/addContacts'); ?>

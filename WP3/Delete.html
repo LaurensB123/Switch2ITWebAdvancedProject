@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    ID:<br>
+    <input type="text" id="ID"><br>
+
+</form>
+<button id="post">Delete Data</button>
+</body>
+<script>
+    var button = document.getElementById('post');
+    var ID = document.getElementById('ID').value;
+    var urlfetch = "https://jsonplaceholder.typicode.com/posts/";
+    var url = urlfetch.concat(ID);
+    button.addEventListener('click', _ => {
+        fetch( url , {
+            method: 'DELETE'
+        })
+            .then(function(data) {
+                console.log(data);
+            })
+    })
+
+</script>
+</html>
