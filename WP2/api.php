@@ -59,9 +59,4 @@ try {
     } catch (Exception $e) {
         var_dump($e);
     }
-
-
-
-
-
-
+?>
